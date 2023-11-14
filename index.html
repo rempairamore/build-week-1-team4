@@ -17,9 +17,10 @@
         </figure>
         <h2>Welcome to <span> your exam </span></h1>
     </header>
+    <main>
     <div>
         <h3> Instructions</h3>
-        <p>We don't expect most engineers to know the answers to all of these questions, so don't worry if tyou're unsure of a few of them.</p>
+        <p class="testo">We don't expect most engineers to know the answers to all of these questions, so don't worry if tyou're unsure of a few of them.</p>
     </div>
     <div>
         <ul>
@@ -29,12 +30,13 @@
         </ul>
     </div>
     <div>
-        <input type="checkbox" id="promessa">
+        <input type="checkbox" id="promessa" onchange="abilita(this)">
         <label for="promessa">I promise to answer myself without help from anyone</label>
-        <input type="button" value="PROCEED" id="bottone">
+        <a href="questions.html"> <input type="button" value="PROCEED" id="bottone" disabled="disabled"> </a>
     </div>
+</main>
     <footer>
-        <p> &copy; Team: Arcangelo, Maria, Mario, Giulio, Christian, Kleo </p>
+        <p class="testo"> &copy; Team: Arcangelo, Maria, Mario, Giulio, Christian, Kleo </p>
     </footer>
     <script src="assets/script/script.js"></script>
 </body>

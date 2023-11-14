@@ -11,17 +11,19 @@ rosino #D20094  #900080
 body{
     background-image: url(../img/bg.jpg);
     background-size:cover;
-    color: white;
+    color: rgb(237, 235, 235);
     font-family: 'Inter', sans-serif;
     font-size: 16px;
 }
 header{
     width: 30em;
+    padding-left: 3em;
 }
 figure{
     height: 3em;
     width: 12em;
-    padding: 1em;
+    padding-top: 2em;
+    padding-bottom: 8em;
 }
 img{
     height: 3em;
@@ -31,27 +33,88 @@ h1,h2,h3{
     font-family: 'Outfit', sans-serif;
     font-size: 60px;
     font-weight: normal;
-    padding-left: 1em;
 }
 
 h3{
     color: #D20094;
+    font-weight: 500;
+    font-size: xx-large;
+    padding-bottom: 0.2em;
 }
 span{
     font-weight: bold;
+    color: white;
 
+}
+main{
+    width: 45em;
+    padding: 3em;
+    
+}
+
+.testo{
+    padding: 2em;
+    padding-top: 0;
+    padding-left: 0;
+}
+ul{
+    list-style: disc;
+    padding-top: 0.5em;
+    padding-left: 2em;
+    width: 50em;
+}
+li{
+    padding: 0.5em;
+}
+#promessa{
+    display: inline-block;
+    margin-top: 8em;
 }
 #bottone{
     display: inline-block;
-    margin-left: 40em;
+    position: absolute;
+    margin-top: 7em;
+    margin-left: 18em;
     border-color: #00FFFF;
     border-style: hidden;
     box-shadow: #00ffff5b 0px 0px 4px 4px ;
     background-color: #00FFFF ;
-    height: 2.5em;
-    width: 9em;
+    height: 3em;
+    width: 12em;
     font-weight: bolder;
+    color: black;
 }
+
+#bottone:hover{
+    box-shadow: #d800dfaf 0px 0px 4px 4px ;
+}
+#bottone:disabled:hover{
+    cursor: not-allowed;
+}
+
+#bottone:disabled{
+    display: inline-block;
+    position: absolute;
+    margin-top: 7em;
+    margin-left: 18em;
+    border-color: #00FFFF;
+    border-style: hidden;
+    box-shadow: #00ffff5b 0px 0px 4px 4px ;
+    background-color: #00FFFF ;
+    height: 3em;
+    width: 12em;
+    font-weight: bolder;
+    color: black;
+}
+
+
+footer{
+    padding: 1em;
+    margin: 0;
+    font-size: small;
+}
+
+
 /* Questo è il CSS della pagina results.html */
 
 #body_results{
@@ -93,7 +156,5 @@ span{
     margin-top: 0.3em;
 }
 
-
-
-
 /* ---------------------------------------*/
+
