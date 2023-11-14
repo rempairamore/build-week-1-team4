@@ -80,14 +80,20 @@ main #stars {
   text-align: center;
 }
 
-main #stars img {
+main #stars .star {
   width: 9%;
-  display: inline-block;
   font-size: 1em;
+  display: inline-block;
 }
 
-main #stars img:hover {
-  fill: red;
+main #stars .star img {
+  width: 100%;
+  font-size: 1em;
+  display: inline-block;
+}
+
+main #stars div.star:hover {
+  opacity: 0;
 }
 /* TODO -----------------------------------------------*/
 
