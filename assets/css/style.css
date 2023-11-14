@@ -1,0 +1,54 @@
+/* font-family: 'Inter', sans-serif;
+font-family: 'Outfit', sans-serif;
+azzurrino #00FFFF
+rosino #D20094  #900080
+*/
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+body{
+    background-image: url(../img/bg.jpg);
+    background-size:cover;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+}
+header{
+    width: 30em;
+}
+figure{
+    height: 3em;
+    width: 12em;
+    padding: 1em;
+}
+img{
+    height: 3em;
+    width: 12em;
+}
+h1,h2,h3{
+    font-family: 'Outfit', sans-serif;
+    font-size: 60px;
+    font-weight: normal;
+    padding-left: 1em;
+}
+
+h3{
+    color: #D20094;
+}
+span{
+    font-weight: bold;
+
+}
+#bottone{
+    display: inline-block;
+    margin-left: 40em;
+    border-color: #00FFFF;
+    border-style: hidden;
+    box-shadow: #00ffff5b 0px 0px 4px 4px ;
+    background-color: #00FFFF ;
+    height: 2.5em;
+    width: 9em;
+    font-weight: bolder;
+}
