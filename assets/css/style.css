@@ -113,3 +113,48 @@ footer{
     margin: 0;
     font-size: small;
 }
+
+
+/* Questo è il CSS della pagina results.html */
+
+#body_results{
+    text-align: center;
+    display: inline;
+    
+}
+#risultato > h2{
+    font-size: 3em;
+    font-weight: bold;
+    margin-top: 2.5em;
+}
+#risultato {
+    margin-bottom: 5em;
+}
+
+ #corretto {
+    width: 20%;
+    display: inline-block;
+} 
+#sbagliato {
+    width: 20%;
+    display: inline-block;
+
+}
+#grafo {
+    width: 20%;
+    height: 373.5px;
+    border: 30px solid #00FFFF;
+    border-radius: 50%;
+    display: inline-block;
+    padding: 5em;
+    box-shadow: 3px 3px 30px 3px black;
+
+}
+#p_grafo {
+    font-size: 1.2em;
+    color: #00FFFF;
+    margin-top: 0.3em;
+}
+
+/* ---------------------------------------*/
+
