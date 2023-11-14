@@ -5,9 +5,10 @@ rosino #D20094  #900080
 */
 *,
 *::before,
-*::after{
-    box-sizing: border-box;
+*::after {
+  box-sizing: border-box;
 }
+
 body{
     background-image: url(../img/bg.jpg);
     background-size:cover;
@@ -15,21 +16,122 @@ body{
     font-family: 'Inter', sans-serif;
     font-size: 16px;
 }
+
 header{
     width: 30em;
     padding-left: 3em;
 }
+
 figure{
     height: 3em;
     width: 12em;
     padding-top: 2em;
     padding-bottom: 8em;
 }
-img{
-    height: 3em;
-    width: 12em;
+
+img {
+  height: 3em;
+  width: 12em;
 }
-h1,h2,h3{
+
+h1,
+h2,
+h3 {
+  font-family: "Outfit", sans-serif;
+  font-size: 60px;
+  font-weight: normal;
+  padding-left: 1em;
+}
+
+h3 {
+  color: #d20094;
+}
+
+span {
+  font-weight: bold;
+}
+
+#bottone {
+  display: inline-block;
+  margin-left: 40em;
+  border-color: #00ffff;
+  border-style: hidden;
+  box-shadow: #00ffff5b 0px 0px 4px 4px;
+  background-color: #00ffff;
+  height: 2.5em;
+  width: 9em;
+  font-weight: bolder;
+}
+
+/* STILE FEEDBACK PAGE */
+main .container {
+  width: 45%;
+  margin: 6em auto;
+  text-align: center;
+}
+
+main h1.feedbackTitle {
+  font-weight: 600;
+  font-size: 60px;
+  margin: 0.5em;
+  padding: 0;
+}
+
+main p.feedbackParagraph {
+  font-size: 1.6em;
+  margin: 1em auto 1.5em auto;
+}
+
+/* TODO ---------------------------------------------- */
+main #stars {
+  width: 100%;
+  margin: 0 0 4em 0;
+  text-align: center;
+}
+
+main #stars .star {
+  width: 9%;
+  font-size: 1em;
+  display: inline-block;
+}
+
+main #stars .star img {
+  width: 100%;
+  font-size: 1em;
+  display: inline-block;
+}
+
+main #stars div.star:hover {
+  opacity: 0;
+}
+/* TODO -----------------------------------------------*/
+
+main form #feedbackInput {
+  width: 90%;
+  border: none;
+  border-bottom: 2px solid #c2128d;
+  padding: 1em 2em 0.5em 1.5em;
+  background: none;
+  outline: none;
+  color: white;
+  font-size: 1em;
+}
+
+main form #feedbackBtn {
+  display: block;
+  border-color: #00ffff;
+  border-style: hidden;
+  box-shadow: #00ffff5b 0px 0px 4px 4px;
+  background-color: #00ffff;
+  height: 2.5em;
+  width: 9em;
+  font-weight: bold;
+  font-size: 1.4em;
+  margin: 2em auto;
+}
+/* FINE STILE FEEDBACK PAGE */
+
+h1,h2,h3 {
     font-family: 'Outfit', sans-serif;
     font-size: 60px;
     font-weight: normal;
@@ -41,11 +143,13 @@ h3{
     font-size: xx-large;
     padding-bottom: 0.2em;
 }
+
 span{
     font-weight: bold;
     color: white;
 
 }
+
 main{
     width: 45em;
     padding: 3em;
@@ -57,19 +161,23 @@ main{
     padding-top: 0;
     padding-left: 0;
 }
+
 ul{
     list-style: disc;
     padding-top: 0.5em;
     padding-left: 2em;
     width: 50em;
 }
+
 li{
     padding: 0.5em;
 }
+
 #promessa{
     display: inline-block;
     margin-top: 8em;
 }
+
 #bottone{
     display: inline-block;
     position: absolute;
@@ -88,6 +196,7 @@ li{
 #bottone:hover{
     box-shadow: #d800dfaf 0px 0px 4px 4px ;
 }
+
 #bottone:disabled:hover{
     cursor: not-allowed;
 }
@@ -122,24 +231,28 @@ footer{
     display: inline;
     
 }
+
 #risultato > h2{
     font-size: 3em;
     font-weight: bold;
     margin-top: 2.5em;
 }
+
 #risultato {
     margin-bottom: 5em;
 }
 
- #corretto {
+#corretto {
     width: 20%;
     display: inline-block;
 } 
+
 #sbagliato {
     width: 20%;
     display: inline-block;
 
 }
+
 #grafo {
     width: 20%;
     height: 373.5px;
@@ -150,6 +263,7 @@ footer{
     box-shadow: 3px 3px 30px 3px black;
 
 }
+
 #p_grafo {
     font-size: 1.2em;
     color: #00FFFF;
@@ -157,4 +271,3 @@ footer{
 }
 
 /* ---------------------------------------*/
-

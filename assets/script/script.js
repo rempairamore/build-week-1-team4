@@ -1,3 +1,8 @@
+// LOGICA FEEDBACK PAGE 
+let div = document.querySelector('#stars');
+console.log(div);
+
+// JS WELCOME PAGE
 const abilita = function(e) {
     let btn = document.getElementById("bottone");
    
