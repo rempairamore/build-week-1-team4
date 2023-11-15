@@ -26,83 +26,15 @@ figure{
     height: 3em;
     width: 12em;
     padding-top: 2em;
-    padding-bottom: 8em;
 }
 
 img {
   height: 3em;
   width: 12em;
 }
-
-
-/* STILE FEEDBACK PAGE */
-main .container {
-  width: 45%;
-  margin: 6em auto;
-  text-align: center;
+h2{
+    margin-top: 1.5em;
 }
-
-main h1.feedbackTitle {
-  font-weight: 600;
-  font-size: 60px;
-  margin: 0.5em;
-  padding: 0;
-}
-
-main p.feedbackParagraph {
-  font-size: 1.6em;
-  margin: 1em auto 1.5em auto;
-}
-
-/* TODO ---------------------------------------------- */
-main #stars {
-  width: 100%;
-  margin: 0 0 4em 0;
-  text-align: center;
-}
-
-main #stars .star {
-  width: 9%;
-  font-size: 1em;
-  display: inline-block;
-}
-
-main #stars .star img {
-  width: 100%;
-  font-size: 1em;
-  display: inline-block;
-}
-
-main #stars div.star:hover {
-  opacity: 0;
-}
-/* TODO -----------------------------------------------*/
-
-main form #feedbackInput {
-  width: 90%;
-  border: none;
-  border-bottom: 2px solid #c2128d;
-  padding: 1em 2em 0.5em 1.5em;
-  background: none;
-  outline: none;
-  color: white;
-  font-size: 1em;
-}
-
-main form #feedbackBtn {
-  display: block;
-  border-color: #00ffff;
-  border-style: hidden;
-  box-shadow: #00ffff5b 0px 0px 4px 4px;
-  background-color: #00ffff;
-  height: 2.5em;
-  width: 9em;
-  font-weight: bold;
-  font-size: 1.4em;
-  margin: 2em auto;
-}
-/* FINE STILE FEEDBACK PAGE */
-
 h1,h2,h3 {
     font-family: 'Outfit', sans-serif;
     font-size: 60px;
@@ -188,14 +120,89 @@ li{
     color: black;
 }
 
-
 footer{
     padding: 1em;
     margin: 0;
     font-size: small;
+    
 }
 
 
+/* STILE FEEDBACK PAGE */
+.container {
+width: 50vw;
+display: inline-block;
+vertical-align: middle;
+margin-left: 25vw;
+margin-top: 13vh;
+margin-bottom: 13vh;
+text-align: center;
+}
+
+.feedbackTitle {
+  text-align: center;
+  font-size: 50px;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+
+.feedbackParagraph {
+    margin: 1em;
+    padding-bottom: 1em;
+    font-size: larger;
+    line-height: 1.5em;
+}
+
+#stars {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+#stars .star {
+  width: 7%;
+  display: inline-block;
+}
+
+.star {
+  font-size: 1em;
+  padding: 0.2em;
+  display: inline-block;
+}
+
+.star:hover {
+  opacity: 0;
+}
+#feedbackContent{
+    padding-top: 2em;
+    text-align: center;
+}
+#feedbackInput {
+  width: 90%;
+  border: none;
+  border-bottom: 2px solid #c2128d;
+  background: none;
+  outline: none;
+  color: white;
+  font-size: 1em;
+  padding-left: 1em;
+  margin-bottom: 2em;
+}
+#feedbackBtn {
+    position: relative;
+    align-self: center;
+    margin-top: 1em;
+    border-color: #00FFFF;
+    border-style: hidden;
+    box-shadow: #00ffff5b 0px 0px 4px 4px ;
+    background-color: #00FFFF ;
+    height: 3em;
+    width: 12em;
+    font-weight: bolder;
+    color: black;
+}
+/* FINE STILE FEEDBACK PAGE */
 /* Questo è il CSS della pagina results.html */
 
 #body_results{
