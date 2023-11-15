@@ -121,11 +121,10 @@ li{
 }
 
 footer{
-    display: block;
-    text-align: left;
     padding: 1em;
     margin: 0;
     font-size: small;
+    
 }
 
 
