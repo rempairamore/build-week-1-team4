@@ -120,8 +120,10 @@ li{
     color: black;
 }
 
-
 footer{
+    display: block;
+    position: absolute;
+    text-align: left;
     padding: 1em;
     margin: 0;
     font-size: small;
@@ -130,10 +132,12 @@ footer{
 
 /* STILE FEEDBACK PAGE */
 .container {
-width: 60vw;
+width: 50vw;
+display: inline-block;
+vertical-align: middle;
+margin-left: 25vw;
+margin-top: 13vh;
 text-align: center;
-margin-left: 7em;
-margin-top: 3em;
 }
 
 .feedbackTitle {
@@ -142,23 +146,18 @@ margin-top: 3em;
   font-weight: 500;
   margin: 0;
   padding: 0;
-  padding-left: 2em;
 }
 
 .feedbackParagraph {
-    width: 55vw;
     margin: 1em;
-    padding-left: 6em;
     padding-bottom: 1em;
     font-size: larger;
     line-height: 1.5em;
 }
 
 #stars {
-  width: 90%;
   margin: 0;
   padding: 0;
-  margin-left: 5em;
   text-align: center;
 }
 
@@ -168,9 +167,8 @@ margin-top: 3em;
 }
 
 .star {
-  width: 70%;
   font-size: 1em;
-  padding: 0.3em;
+  padding: 0.2em;
   display: inline-block;
 }
 
@@ -182,7 +180,7 @@ margin-top: 3em;
     text-align: center;
 }
 #feedbackInput {
-  width: 75%;
+  width: 90%;
   border: none;
   border-bottom: 2px solid #c2128d;
   background: none;
@@ -190,14 +188,12 @@ margin-top: 3em;
   color: white;
   font-size: 1em;
   padding-left: 1em;
-  margin-left: 6em;
   margin-bottom: 2em;
 }
 #feedbackBtn {
     position: relative;
     align-self: center;
     margin-top: 1em;
-    margin-left: 8em;
     border-color: #00FFFF;
     border-style: hidden;
     box-shadow: #00ffff5b 0px 0px 4px 4px ;
