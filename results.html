@@ -23,26 +23,25 @@
     </div>
     <div id="cont_centrale">
     <div id="corretto">
-        <p>Correct</p>
-        <p id="Correct%">66,7%</p>
-        <p id="Correct">4/6 questions</p>
+        <p id="correct">Correct</p>
+        <p id="Correct%"><span>66,7%</span> </p>
+        <p id="nCorrette">4/6 questions</p>
     </div>
     <div id="grafo">
-        <p id="cong">Congratulations!</p>
-        <p id="p_grafo">You passed your exam.</p>
-        <p id="#bodyGrafo">We'll send you the certificate in few minutes. Check your email </p></div>
-    <div id="sbagliato">
-        <p>Wrong</p>
-        <p id="Wrong%">33,3%</p>
-        <p id="Wrong">2/6 questions</p>
+        <canvas id="donutChart" width="400" height="400"></canvas>
     </div>
-</div>
+    <div id="sbagliato">
+        <p id="wrong">Wrong</p>
+        <p id="Wrong%"><span>33,3%</span></p>
+        <p id="nSbagliate">2/6 questions</p>
+    </div>
     <div>
         <a href="feedback.html"><input type="button" value="RATE US"> </a>
     </div>
     <footer>
         <p> &copy; Team: Archy & Co. </p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="assets/script/script.js"></script>
 </body>
 </html>

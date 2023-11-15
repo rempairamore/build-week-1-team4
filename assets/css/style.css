@@ -126,8 +126,6 @@ footer{
     font-size: small;
     
 }
-
-
 /* STILE FEEDBACK PAGE */
 .container {
 width: 50vw;
@@ -207,46 +205,52 @@ text-align: center;
 
 #body_results{
     text-align: center;
+}
+#cont_centrale{
     display: inline;
-    
+}
+#grafo {
+    width: 30vw;
+    height: 50vh;
+    display: inline-block;
+    margin: 0%;
+    margin-bottom: 5em;
+    border-radius: 100em;
+}
+#corretto{
+display: block;
+float: left;
+width: 30vw;
+height: 60vh;
+margin-top: 10vh;
+font-size: x-large;
+padding: 2em;
+color: rgb(237, 235, 235);
 }
 
+#sbagliato{
+display: block;
+float: right;
+width: 30vw;
+height: 60vh;
+margin-top: 10vh;
+padding: 2em;
+font-size: x-large;
+color: rgb(237, 235, 235);
+}
+#nCorrette , #nSbagliate {
+    font-size: 13px;
+}
 #risultato > h2{
     font-size: 3em;
     font-weight: bold;
-    margin-top: 2.5em;
+    margin-top: 1em;
+    padding-bottom: 0.3em;
 }
 
 #risultato {
     margin-bottom: 5em;
 }
 
-#corretto {
-    width: 20%;
-    display: inline-block;
-} 
-
-#sbagliato {
-    width: 20%;
-    display: inline-block;
-
-}
-
-#grafo {
-    width: 20%;
-    height: 373.5px;
-    border: 30px solid #00FFFF;
-    border-radius: 50%;
-    display: inline-block;
-    padding: 5em;
-    box-shadow: 3px 3px 30px 3px black;
-
-}
-
-#p_grafo {
-    font-size: 1.2em;
-    color: #00FFFF;
-    margin-top: 0.3em;
-}
 
 /* ---------------------------------------*/
