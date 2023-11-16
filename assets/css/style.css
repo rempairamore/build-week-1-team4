@@ -305,6 +305,11 @@ color: rgb(237, 235, 235);
   margin-bottom: 5em;
 }
 
+#ResultBtn:hover {
+  box-shadow: #d800dfaf 0px 0px 4px 4px;
+  background-color: #900080;
+}
+
 /*CSS timer*/
 .base-timer {
     position: relative;
@@ -364,5 +369,4 @@ color: rgb(237, 235, 235);
     position: absolute;
   }
 
-  
   /*Fine codice css timer*/
