@@ -53,11 +53,13 @@ span{
     color: white;
 
 }
-
+#content{
+width: 45em;
+padding: 3em;
+}
 main{
     width: 45em;
     padding: 3em;
-    
 }
 
 .testo{
@@ -124,6 +126,7 @@ footer{
     padding: 1em;
     margin: 0;
     font-size: small;
+    text-align: left;
     
 }
 /* STILE FEEDBACK PAGE */
@@ -205,6 +208,7 @@ text-align: center;
 
 #body_results{
     text-align: center;
+    padding: 0;
 }
 #cont_centrale{
     display: inline;
@@ -214,7 +218,7 @@ text-align: center;
     height: 50vh;
     display: inline-block;
     margin: 0%;
-    margin-bottom: 5em;
+    margin-bottom: 3em;
     border-radius: 100em;
 }
 
@@ -251,6 +255,16 @@ color: rgb(237, 235, 235);
 
 #risultato {
     margin-bottom: 5em;
+}
+
+#ResultBtn{
+  color: white;
+  border: solid white 1.5px;
+  background: none;
+  height: 3em;
+  width: 12em;
+  font-weight: bold;
+  margin-bottom: 5em;
 }
 
 /*CSS timer*/
