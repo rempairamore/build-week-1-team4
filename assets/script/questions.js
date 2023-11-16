@@ -1,12 +1,10 @@
-// Variabili globali
-const FULL_DASH_ARRAY = 283;
-const WARNING_THRESHOLD = 10;
-const ALERT_THRESHOLD = 5;
-
 // Var per Questions dinamiche
-let questionNumber = 1;
 let giuste = 0;
 let sbagliate = 0;
+let domandeNonRisposte = 0;
+let domandeTotali = 0;
+let counter = 0;
+let timeoutId = null;
 let divDomanda = document.querySelector('#domanda')
 let divRisposte = document.querySelector('#risposte')
 //FINE
@@ -17,26 +15,26 @@ bottonePartenza()
 //fine
 
 
-// INIZIO FUNZIONI TIMER
+// INIZIO FUNZIONI e variabili TIMER
+const FULL_DASH_ARRAY = 283;
+let timePassed = 0;
+let timeLeft;
+let timerInterval = null;
+let duration;
+let WARNING_THRESHOLD;
+let ALERT_THRESHOLD;
+
 const COLOR_CODES = {
   info: {
     color: "green"
   },
   warning: {
-    color: "orange",
-    threshold: WARNING_THRESHOLD
+    color: "orange"
   },
   alert: {
-    color: "red",
-    threshold: ALERT_THRESHOLD
+    color: "red"
   }
 };
-
-const TIME_LIMIT = 30;
-let timePassed = 0;
-let timeLeft = TIME_LIMIT;
-let timerInterval = null;
-let remainingPathColor = COLOR_CODES.info.color;
 
 document.getElementById("app").innerHTML = `
 <div class="base-timer">
@@ -45,8 +43,8 @@ document.getElementById("app").innerHTML = `
       <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
       <path
         id="base-timer-path-remaining"
-        stroke-dasharray="283"
-        class="base-timer__path-remaining ${remainingPathColor}"
+        stroke-dasharray="${FULL_DASH_ARRAY}"
+        class="base-timer__path-remaining ${COLOR_CODES.info.color}"
         d="
           M 50, 50
           m -45, 0
@@ -57,24 +55,30 @@ document.getElementById("app").innerHTML = `
     </g>
   </svg>
   <span id="base-timer-label" class="base-timer__label">${formatTime(
-    timeLeft
+    0
   )}</span>
 </div>
 `;
 
-startTimer();
-
 function onTimesUp() {
   clearInterval(timerInterval);
+  // Riporta il colore a quello iniziale
+  document.getElementById("base-timer-path-remaining").classList.remove(COLOR_CODES.warning.color, COLOR_CODES.alert.color);
+  document.getElementById("base-timer-path-remaining").classList.add(COLOR_CODES.info.color);
 }
 
-function startTimer() {
+function startTimer(tempo) {
+  clearInterval(timerInterval);
+  timePassed = 0;
+  duration = tempo;
+  timeLeft = tempo;
+  WARNING_THRESHOLD = tempo / 2;
+  ALERT_THRESHOLD = tempo / 3;
+
   timerInterval = setInterval(() => {
-    timePassed = timePassed += 1;
-    timeLeft = TIME_LIMIT - timePassed;
-    document.getElementById("base-timer-label").innerHTML = formatTime(
-      timeLeft
-    );
+    timePassed++;
+    timeLeft = duration - timePassed;
+    document.getElementById("base-timer-label").innerHTML = formatTime(timeLeft);
     setCircleDasharray();
     setRemainingPathColor(timeLeft);
 
@@ -97,34 +101,30 @@ function formatTime(time) {
 
 function setRemainingPathColor(timeLeft) {
   const { alert, warning, info } = COLOR_CODES;
-  if (timeLeft <= alert.threshold) {
-    document
-      .getElementById("base-timer-path-remaining")
-      .classList.remove(warning.color);
-    document
-      .getElementById("base-timer-path-remaining")
-      .classList.add(alert.color);
-  } else if (timeLeft <= warning.threshold) {
-    document
-      .getElementById("base-timer-path-remaining")
-      .classList.remove(info.color);
-    document
-      .getElementById("base-timer-path-remaining")
-      .classList.add(warning.color);
+  const remainingPath = document.getElementById("base-timer-path-remaining");
+  
+  if (timeLeft <= ALERT_THRESHOLD) {
+    remainingPath.classList.remove(warning.color);
+    remainingPath.classList.add(alert.color);
+  } else if (timeLeft <= WARNING_THRESHOLD) {
+    remainingPath.classList.remove(info.color);
+    remainingPath.classList.add(warning.color);
+  } else {
+    remainingPath.classList.remove(alert.color, warning.color);
+    remainingPath.classList.add(info.color);
   }
 }
 
 function calculateTimeFraction() {
-  const rawTimeFraction = timeLeft / TIME_LIMIT;
-  return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
+  const rawTimeFraction = timeLeft / duration;
+  return rawTimeFraction - (1 / duration) * (1 - rawTimeFraction);
 }
 
 function setCircleDasharray() {
   const circleDasharray = `${(
     calculateTimeFraction() * FULL_DASH_ARRAY
-  ).toFixed(0)} 283`;
-  document
-    .getElementById("base-timer-path-remaining")
+  ).toFixed(0)} ${FULL_DASH_ARRAY}`;
+  document.getElementById("base-timer-path-remaining")
     .setAttribute("stroke-dasharray", circleDasharray);
 }
 //FINE CODICE JAVASCRIPT TIMER
@@ -175,6 +175,8 @@ let domande = [
         other3: 'Libri comprati a caro prezzo',
     }
 ]
+domandeTotali = domande.length;
+console.log('domande totali: ' + domandeTotali)
 
 
 
@@ -213,68 +215,81 @@ function prontiPartenza () {
 
 
 function selettoreDomande() {
-    let counter = 0;
-    let tempoDisposizione = 9915000;
-    function eseguiProssimaDomanda() {
-        if (counter < domande.length) {
-            if(domande[counter].type == 'crocetta') {
-                tempoDisposizione = 9930000;
-            } else if(domande[counter].type == 'booleano') {
-                tempoDisposizione = 9915000;
-            }
-            chiamaDomanda(counter, tempoDisposizione);
+    clearTimeout(timeoutId);
+    console.log('Counter all\'inizio di selettoreDomande: ' + counter);
+    if (counter < domande.length) {
+        let tempoDisposizione = domande[counter].type == 'crocetta' ? 30000 : 15000;
+        startTimer(tempoDisposizione / 1000)
+        chiamaDomanda(counter, tempoDisposizione);
 
-            setTimeout(() => {
-                counter++;
-                eseguiProssimaDomanda();
-            }, (tempoDisposizione+ 991000));
-        }
+        timeoutId = setTimeout(() => {
+          pulisciDomande();
+          counter++;
+          domandeNonRisposte++;
+          selettoreDomande();
+      }, tempoDisposizione + 1000);
+    } else {
+        console.log('Quiz completato. Risposte corrette: ' + giuste + ', Risposte sbagliate: ' + sbagliate + ', Domande non Risposte: ' + domandeNonRisposte);
+        redirectToResults()
     }
-
-    eseguiProssimaDomanda(); 
 }
-
 
 function chiamaDomanda(index, tempo) {
     let titoloDomanda = document.createElement('h1');
-   
-    titoloDomanda.innerText = domande[index].title
-    divDomanda.appendChild(titoloDomanda) 
-     if(domande[index].type == 'crocetta') {
-        let risposta1 = document.createElement('button')
-        risposta1.classList = 'risposta'
-        risposta1.innerText = domande[index].correctAnswers
-        let risposta2 = document.createElement('button')
-        risposta2.classList = 'risposta'
-        risposta2.innerText = domande[index].other1
-        let risposta3 = document.createElement('button')
-        risposta3.classList = 'risposta'
-        risposta3.innerText = domande[index].other2
-        let risposta4 = document.createElement('button')
-        risposta4.classList = 'risposta'
-        risposta4.innerText = domande[index].other3
-        // let arrayCasuale = generaArrayCasuale4num();
-        divRisposte.appendChild(risposta1)
-        divRisposte.appendChild(risposta2)
-        divRisposte.appendChild(risposta3)
-        divRisposte.appendChild(risposta4)
-    } else if(domande[index].type == 'booleano') {
-        let risposta1 = document.createElement('button')
-        risposta1.classList = 'risposta'
-        risposta1.innerText = domande[index].correctAnswers
-        let risposta2 = document.createElement('button')
-        risposta2.classList = 'risposta'
-        risposta2.innerText = domande[index].other1 
-        divRisposte.appendChild(risposta1)
-        divRisposte.appendChild(risposta2)
+    titoloDomanda.innerText = domande[index].title;
+    divDomanda.appendChild(titoloDomanda);
+
+    if (domande[index].type == 'crocetta') {
+        for (let i = 0; i < 4; i++) {
+            let risposta = document.createElement('button');
+            risposta.classList = 'risposta';
+            risposta.innerText = i === 0 ? domande[index].correctAnswers : domande[index]['other' + i];
+            divRisposte.appendChild(risposta);
+        }
+    } else if (domande[index].type == 'booleano') {
+        for (let i = 0; i < 2; i++) {
+            let risposta = document.createElement('button');
+            risposta.classList = 'risposta';
+            risposta.innerText = i === 0 ? domande[index].correctAnswers : domande[index].other1;
+            divRisposte.appendChild(risposta);
+        }
     }
-    setTimeout(() => {
-        divDomanda.removeChild(titoloDomanda)
-        while (divRisposte.firstChild) {
-            divRisposte.removeChild(divRisposte.firstChild);
-        }        
-    }, tempo);  
 }
+
+function pulisciDomande() {
+    if (divDomanda.firstChild) {
+        divDomanda.removeChild(divDomanda.firstChild);
+    }
+    while (divRisposte.firstChild) {
+        divRisposte.removeChild(divRisposte.firstChild);
+    }
+    onTimesUp()
+}
+
+// Event Listener per i bottoni delle risposte
+divRisposte.addEventListener('click', function(event) {
+    if (event.target.classList.contains('risposta')) {
+        clearTimeout(timeoutId);
+        let testoRisposta = event.target.innerText;
+        if (testoRisposta === domande[counter].correctAnswers) {
+            console.log("Risposta corretta!");
+            giuste++;
+        } else {
+            console.log("Risposta sbagliata.");
+            sbagliate++;
+        }
+        pulisciDomande();
+        if (counter < domande.length - 1) {
+            counter++;
+            selettoreDomande();
+        } else {
+            console.log('Quiz completato. Risposte corrette: ' + giuste + ', Risposte sbagliate: ' + sbagliate + ', Domande non Risposte: ' + domandeNonRisposte);
+            redirectToResults()
+        }
+    }
+});
+
+
 
 function generaArrayCasuale4num() {
     let numeri = [];
@@ -287,5 +302,13 @@ function generaArrayCasuale4num() {
         }
     }
     return risposte;
+}
+
+function redirectToResults() {
+  const baseUrl = "results.html"; // Nome del file nella stessa cartella
+  const queryString = `?giuste=${encodeURIComponent(giuste)}&sbagliate=${encodeURIComponent(sbagliate)}&nonrisposte=${encodeURIComponent(domandeNonRisposte)}&domandetotali=${encodeURIComponent(domandeTotali)}`;
+
+  // Esegui il redirect
+  window.location.href = baseUrl + queryString;
 }
 //FINE FUNZIONI DOMANDE DINAMICHE
