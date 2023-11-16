@@ -28,6 +28,13 @@ figure {
   padding-top: 2em;
 }
 
+#container {
+  text-align: center;
+  margin-left: 20vw;
+  margin-top: 30vh;
+  width: 60vw;
+}
+
 img {
   height: 3em;
   width: 12em;
@@ -55,15 +62,52 @@ span {
   color: white;
 }
 
-main {
-  width: 45em;
-  padding: 3em;
-}
+
 
 .testo {
   padding: 2em;
   padding-top: 0;
   padding-left: 0;
+
+#content{
+width: 45em;
+padding: 3em;
+}
+main{
+    width: 100%;
+    padding: 3em;
+}
+
+/*CSS BUTTON*/
+
+button {
+  border-radius: 50em;
+  height: 70px;
+  width: 350px;
+  background-color: rgba(246, 250, 250, 0.059);
+  color: white;
+  border: 2px solid;
+  box-shadow: -2px -2px 3px white;
+  border-color: transparent;
+}
+
+button:hover {
+  background-color: #900080;
+  border-color: transparent;
+}
+
+#domanda {
+  text-align: center;
+  width: 55vw;
+}
+
+#risposte {
+  margin: 2.5vw;
+  width: 50vw;
+}
+
+.risposta {
+  margin: 1vw;
 }
 
 ul {
@@ -120,10 +164,11 @@ li {
   color: black;
 }
 
-footer {
-  padding: 1em;
-  margin: 0;
-  font-size: small;
+footer{
+    padding: 1em;
+    margin: 0;
+    font-size: small;
+    text-align: left;
 }
 
 /* STILE FEEDBACK PAGE ----------------------------------*/
@@ -131,7 +176,8 @@ div.container {
   width: 100vw;
   text-align: center;
   margin-top: 5.7em;
-}
+
+
 
 div.container > div.content {
   width: 45%;
@@ -227,12 +273,16 @@ form a {
 
 /* Questo è il CSS della pagina results.html */
 
-#body_results {
-  text-align: center;
+
+#body_results{
+    text-align: center;
+    padding: 0;
 }
+
 #cont_centrale {
   display: inline;
 }
+
 #grafo {
   width: 30vw;
   height: 50vh;
@@ -242,40 +292,54 @@ form a {
   border-radius: 100em;
 }
 
-#corretto {
-  display: block;
-  float: left;
-  width: 30vw;
-  height: 60vh;
-  margin-top: 10vh;
-  font-size: x-large;
-  padding: 2em;
-  color: rgb(237, 235, 235);
+#corretto{
+display: block;
+float: left;
+width: 30vw;
+height: 60vh;
+margin-top: 10vh;
+font-size: x-large;
+padding: 2em;
+color: rgb(237, 235, 235);
 }
 
-#sbagliato {
-  display: block;
-  float: right;
-  width: 30vw;
-  height: 60vh;
-  margin-top: 10vh;
-  padding: 2em;
-  font-size: x-large;
-  color: rgb(237, 235, 235);
+#sbagliato{
+display: block;
+float: right;
+width: 30vw;
+height: 60vh;
+margin-top: 10vh;
+padding: 2em;
+font-size: x-large;
+color: rgb(237, 235, 235);
 }
-#nCorrette,
-#nSbagliate {
-  font-size: 13px;
+#nCorrette , #nSbagliate {
+    font-size: 13px;
 }
-#risultato > h2 {
-  font-size: 3em;
-  font-weight: bold;
-  margin-top: 1em;
-  padding-bottom: 0.3em;
+#risultato > h2{
+    font-size: 3em;
+    font-weight: bold;
+    margin-top: 1em;
+    padding-bottom: 0.3em;
 }
 
 #risultato {
   margin-bottom: 5em;
+}
+
+#ResultBtn{
+  color: white;
+  border: solid white 1.5px;
+  background: none;
+  height: 3em;
+  width: 12em;
+  font-weight: bold;
+  margin-bottom: 5em;
+}
+
+#ResultBtn:hover {
+  box-shadow: #d800dfaf 0px 0px 4px 4px;
+  background-color: #900080;
 }
 
 /*CSS timer*/
