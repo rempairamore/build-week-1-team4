@@ -23,6 +23,18 @@ const ShadowPlugin = {
   let totGiu = parseFloat((+risposteGiuste / +domandeTotali) * 100).toFixed(1);
   let totSba = parseFloat(((+risposteSbagliate + +nonRisposte) / +domandeTotali) * 100).toFixed(1);
 
+  // passaggio variabili su html
+
+  let percGiuste = document.getElementById("Correct%");
+  percGiuste.innerText = parseFloat((+risposteGiuste / +domandeTotali) * 100).toFixed(1) + '%';
+
+  let percSbagliate = document.getElementById("Wrong%");
+  percSbagliate.innerText = parseFloat(((+risposteSbagliate + +nonRisposte) / +domandeTotali) * 100).toFixed(1) + '%';
+
+  let nGiuste = document.getElementById("nCorrette");
+  nGiuste.textContent = risposteGiuste +'/'+ domandeTotali + ' questions';
+  let nSbagliate = document.getElementById("nSbagliate");
+  nSbagliate.textContent = (+risposteSbagliate + +nonRisposte) +'/'+ domandeTotali + ' questions';
   // colori per le sezioni del grafico
   let colors = [ '#D20094','#00FFFF'];
   
