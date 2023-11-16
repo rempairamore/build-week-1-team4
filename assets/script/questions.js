@@ -214,20 +214,20 @@ function prontiPartenza () {
 
 function selettoreDomande() {
     let counter = 0;
-    let tempoDisposizione = 15000;
+    let tempoDisposizione = 9915000;
     function eseguiProssimaDomanda() {
         if (counter < domande.length) {
             if(domande[counter].type == 'crocetta') {
-                tempoDisposizione = 30000;
+                tempoDisposizione = 9930000;
             } else if(domande[counter].type == 'booleano') {
-                tempoDisposizione = 15000;
+                tempoDisposizione = 9915000;
             }
             chiamaDomanda(counter, tempoDisposizione);
 
             setTimeout(() => {
                 counter++;
                 eseguiProssimaDomanda();
-            }, (tempoDisposizione+ 1000));
+            }, (tempoDisposizione+ 991000));
         }
     }
 
