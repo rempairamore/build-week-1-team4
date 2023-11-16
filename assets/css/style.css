@@ -68,6 +68,7 @@ span {
   padding: 2em;
   padding-top: 0;
   padding-left: 0;
+}
 
 #content{
 width: 45em;
@@ -176,7 +177,7 @@ div.container {
   width: 100vw;
   text-align: center;
   margin-top: 5.7em;
-
+}
 
 
 div.container > div.content {
@@ -272,8 +273,6 @@ form a {
 /* FINE STILE FEEDBACK PAGE -----------------------------*/
 
 /* Questo è il CSS della pagina results.html */
-
-
 #body_results{
     text-align: center;
     padding: 0;
