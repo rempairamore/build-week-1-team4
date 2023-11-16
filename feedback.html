@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rate us</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,35 +26,50 @@
         <img src="assets/img/epicode_logo.png" alt="epicode_logo" />
       </figure>
     </header>
+
     <div class="container">
-      <h1 class="feedbackTitle">Tell us how it's going</h1>
-      <p class="feedbackParagraph">
-        From 0 to 10, how likely are you to recommend EPICODE to a friend or a
-        colleague?
-      </p>
-      <div id="stars">
-        <img class="star" src="assets/img/star.svg" alt="">
-        <img class="star" src="assets/img/star.svg" alt="">
-        <img class="star" src="assets/img/star.svg" alt="">
-        <img class="star" src="assets/img/star.svg" alt="">
-        <img class="star" src="assets/img/star.svg" alt="">
-        <img class="star" src="assets/img/star.svg" alt="">
-        <img class="star" src="assets/img/star.svg" alt="">
-        <img class="star" src="assets/img/star.svg" alt="">
-        <img class="star" src="assets/img/star.svg" alt="">
-        <img class="star" src="assets/img/star.svg" alt="">
-      </div>
-      <div id="feedbackContent">
-        <p class="feedbackParagraph">Leave us an open feedback about your experience so far</p>
-          <form id="feedbackForm">
-            <input type="text" id="feedbackInput" placeholder="Write your comment here"/>
-          </form>
-          <a href="https://epicode.com/it/career-services/"><input type="button" value="MORE INFO" id= 'feedbackBtn'  /></a>
+      <div class="content">
+        <h1 class="feedbackTitle">Tell us how it's going</h1>
+        <p class="feedbackParagraph">
+          From 0 to 10, how likely are you to recommend EPICODE to a friend or a
+          colleague?
+        </p>
+
+        <ul class="list-inline rating-list">
+          <li><i class="fa fa-star yellow"></i></li>
+          <li><i class="fa fa-star yellow"></i></li>
+          <li><i class="fa fa-star yellow"></i></li>
+          <li><i class="fa fa-star yellow"></i></li>
+          <li><i class="fa fa-star yellow"></i></li>
+          <li><i class="fa fa-star yellow"></i></li>
+          <li><i class="fa fa-star yellow"></i></li>
+          <li><i class="fa fa-star yellow"></i></li>
+          <li><i class="fa fa-star yellow"></i></li>
+          <li><i class="fa fa-star gray"></i></li>
+        </ul>
+
+        <div class="feedbackContent">
+          <p class="feedbackParagraph">
+            Leave us an open feedback about your experience so far
+          </p>
+        </div>
+
+        <form id="feedbackForm">
+          <input
+            type="text"
+            id="feedbackInput"
+            placeholder="Write your comment here"
+          />
+          <a href="https://epicode.com/it/"
+            ><input type="button" id="feedbackBtn" value="MORE INFO"
+          /></a>
+        </form>
+        <footer>
+          <p>&copy; Team: Arcangelo, Maria, Mario, Giulio, Christian, Kleo</p>
+        </footer>
       </div>
     </div>
-    <footer>
-      <p> &copy; Team: Arcangelo, Maria, Mario, Giulio, Christian, Kleo </p>
-    </footer>
-    <script src="assets/script/script.js"></script>
+
+    <script src="assets/script/feedback.js"></script>
   </body>
 </html>
