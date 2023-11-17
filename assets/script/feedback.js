@@ -18,3 +18,14 @@ function executeRating(stars) {
   });
 }
 executeRating(ratingStars);
+
+// creazione sezione commenti 
+document.getElementById("bottone_invio").addEventListener("click", function () {
+
+  const newComment = document.getElementById("feedbackInput").value;
+  const commentContainer = document.getElementById("comment-container");
+  const commentElement = document.createElement("p");
+  commentElement.innerText = newComment;
+  commentContainer.appendChild(commentElement);
+  document.getElementById("feedbackInput").value = "";
+})
