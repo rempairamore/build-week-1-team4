@@ -209,6 +209,7 @@ function prontiPartenza () {
     }, 2300);
     setTimeout(() => {
         divContainer.removeChild(titoloIniziale2);
+        divContainer.remove()
         selettoreDomande()
     }, 4500);
 
@@ -273,20 +274,26 @@ divRisposte.addEventListener('click', function(event) {
         clearTimeout(timeoutId);
         let testoRisposta = event.target.innerText;
         if (testoRisposta === domande[counter].correctAnswers) {
-            console.log("Risposta corretta!");
+            // console.log("Risposta corretta!");
+            event.target.style.boxShadow = '10px 20px 20px green'
             giuste++;
+            feedbackRispostaGiusta()
         } else {
-            console.log("Risposta sbagliata.");
+            // console.log("Risposta sbagliata.");
+            event.target.style.boxShadow = '10px 20px 20px red'
             sbagliate++;
+            feedbackRispostaSbagliata()
         }
-        pulisciDomande();
-        if (counter < domande.length - 1) {
+        setTimeout(() => {
+          pulisciDomande()
+          if (counter < domande.length - 1) {
             counter++;
             selettoreDomande();
         } else {
             console.log('Quiz completato. Risposte corrette: ' + giuste + ', Risposte sbagliate: ' + sbagliate + ', Domande non Risposte: ' + domandeNonRisposte);
             redirectToResults()
         }
+        },1500)
     }
 });
 
@@ -313,3 +320,15 @@ function redirectToResults() {
   window.location.href = baseUrl + queryString;
 }
 //FINE FUNZIONI DOMANDE DINAMICHE
+
+//Function feedback Risposte
+
+function feedbackRispostaGiusta() {
+  let audioGood = document.getElementById('feedbackGood');
+  audioGood.play()
+}
+
+function feedbackRispostaSbagliata() {
+  let audioBad = document.getElementById('feedbackBad');
+  audioBad.play()
+}
