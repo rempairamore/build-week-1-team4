@@ -144,3 +144,5 @@ form #feedbackBtn:hover {
 form a {
   text-decoration: none;
 }
+
+#bottone_invio {   background-color: #C2128D;   border:none;   color: white;   margin-left: 61em;   display: inline;   width: 5em;   height: 2em; }
