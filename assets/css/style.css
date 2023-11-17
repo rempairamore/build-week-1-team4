@@ -201,32 +201,29 @@ p.feedbackParagraph {
   content: "\f005";
 }
 
-.rating-list {
+.ratingList {
   margin: 0 auto;
   padding: 0;
   width: 100%;
   margin-bottom: 4em;
 }
 
-.rating-list li {
+.ratingList li {
   font-size: 3em;
-}
-
-.rating-list li i.yellow {
-  color: #00ffff;
-}
-
-.rating-list li i.gray {
-  color: #425a5a;
-}
-
-.list-inline>li {
   display: inline-block;
   padding-right: 5px;
   padding-left: 5px;
 }
 
-.rating-list li {
+.ratingList li i.lightblue {
+  color: #00ffff;
+}
+
+.ratingList li i.gray {
+  color: #425a5a;
+}
+
+.ratingList li {
   padding: 0px;
 }
 
