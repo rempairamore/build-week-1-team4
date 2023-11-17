@@ -20,6 +20,8 @@ body {
   color: rgb(237, 235, 235);
   font-family: "Inter", sans-serif;
   font-size: 16px;
+  height: 100vh;
+  overflow: hidden;
 }
 header{
   height: 10vh;
@@ -47,11 +49,9 @@ span {
 }
 footer{
   padding-left: 1em;
-  position: absolute;
-  margin: 0;
-  margin-top: 15vh;
   font-size: small;
   text-align: left;
+  margin: 8em 0 2em 1em;
   }
 
 /*WELCOME PAGE*/
@@ -92,17 +92,20 @@ footer{
     padding: 0.5em;
   }
   
-  #promessa {
+  form.welcomeForm {
+    width: 90vw;
+    margin: 4em 0 0 0;
+  }
+
+  #promessa label {
     display: inline-block;
-    margin-top: 8em;
-    position: relative;
+    width: 60%;
   }
   
   #bottone {
     display: inline-block;
-    position: absolute;
-    margin-top: 7em;
-    margin-left: 18em;
+    width: 30%;
+    margin-left: 10em;
     border-color: #00ffff;
     border-style: hidden;
     box-shadow: #00ffff5b 0px 0px 4px 4px;
@@ -122,10 +125,6 @@ footer{
   }
   
   #bottone:disabled {
-    display: inline-block;
-    position: absolute;
-    margin-top: 7em;
-    margin-left: 18em;
     border-color: #00ffff;
     border-style: hidden;
     box-shadow: #00ffff5b 0px 0px 4px 4px;
@@ -273,42 +272,41 @@ button:hover {
 /*RESULT*/
 #body_results{
   text-align: center;
-  padding: 0;
+  overflow: hidden;
+}
+
+#risultato {
+  margin-bottom: 2em;
 }
 
 #cont_centrale {
-display: inline;
+margin: 1em auto;
+width: 90%;
+text-align: center;
+}
+
+#corretto, #sbagliato{
+  display: inline-block;
+  font-size: 3em;
+  color: rgb(237, 235, 235);
+  width: 15%;
+  height: 4em;
+  text-align: center;
+  vertical-align: middle;
+  margin-top: -7em;
+}
+
+#corretto {
+  margin-left: 3em;
+}
+
+#sbagliato {
+  margin-right: 3em;
 }
 
 #grafo {
-width: 30vw;
-height: 50vh;
 display: inline-block;
-margin: 0%;
-margin-bottom: 5em;
-border-radius: 100em;
-}
-
-#corretto{
-display: block;
-float: left;
-width: 30vw;
-height: 60vh;
-margin-top: 10vh;
-font-size: x-large;
-padding: 2em;
-color: rgb(237, 235, 235);
-}
-
-#sbagliato{
-display: block;
-float: right;
-width: 30vw;
-height: 60vh;
-margin-top: 10vh;
-padding: 2em;
-font-size: x-large;
-color: rgb(237, 235, 235);
+width: 50%;
 }
 
 #wrong, #correct{
@@ -327,10 +325,6 @@ padding-bottom: 0.3em;
   padding-bottom: 0.3em;
 }
 
-#risultato {
-margin-bottom: 5em;
-}
-
 #ResultBtn{
 color: white;
 border: solid white 1.5px;
@@ -338,10 +332,15 @@ background: none;
 height: 3em;
 width: 12em;
 font-weight: bold;
-margin-bottom: 5em;
+margin-bottom: 2em;
+margin-top: 2em;
 }
 
 #ResultBtn:hover {
 box-shadow: #d800dfaf 0px 0px 4px 4px;
 background-color: #900080;
+}
+
+.resultFooter {
+  margin-top: -1em;
 }
