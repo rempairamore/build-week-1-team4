@@ -168,7 +168,7 @@ button:hover {
 }
 
 #attendi{
-  padding-left: 30vw;
+  padding-left: 25vw;
 }
  #foo{
   padding-left: 1em;
@@ -186,7 +186,7 @@ button:hover {
 #risposte {
   display: inline-block;
   position: relative;
-  margin-left: 22vw;
+  margin-left: 25vw;
   margin-top: 5vh;
   width: 60vw;
 }
