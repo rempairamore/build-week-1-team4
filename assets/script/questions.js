@@ -231,7 +231,9 @@ function selettoreDomande() {
       }, tempoDisposizione + 1000);
     } else {
         console.log('Quiz completato. Risposte corrette: ' + giuste + ', Risposte sbagliate: ' + sbagliate + ', Domande non Risposte: ' + domandeNonRisposte);
-        redirectToResults()
+        setTimeout(() => {
+          redirectToResults()
+        },1500)
     }
 }
 
@@ -275,17 +277,23 @@ divRisposte.addEventListener('click', function(event) {
         if (testoRisposta === domande[counter].correctAnswers) {
             console.log("Risposta corretta!");
             giuste++;
+            feedbackRispostaGiusta()
         } else {
             console.log("Risposta sbagliata.");
             sbagliate++;
+            feedbackRispostaSbagliata()
         }
-        pulisciDomande();
+        setTimeout(() => {
+          pulisciDomande()
+        },1500)
         if (counter < domande.length - 1) {
             counter++;
             selettoreDomande();
         } else {
             console.log('Quiz completato. Risposte corrette: ' + giuste + ', Risposte sbagliate: ' + sbagliate + ', Domande non Risposte: ' + domandeNonRisposte);
-            redirectToResults()
+            setTimeout(() => {
+              redirectToResults()
+            },1500)
         }
     }
 });
@@ -313,3 +321,15 @@ function redirectToResults() {
   window.location.href = baseUrl + queryString;
 }
 //FINE FUNZIONI DOMANDE DINAMICHE
+
+//Function feedback Risposte
+
+function feedbackRispostaGiusta() {
+  let audioGood = document.getElementById('feedbackGood');
+  audioGood.play()
+}
+
+function feedbackRispostaSbagliata() {
+  let audioBad = document.getElementById('feedbackBad');
+  audioBad.play()
+}
