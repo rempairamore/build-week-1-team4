@@ -18,25 +18,25 @@ function creazioneMessaggio() {
         // Proprietà del testo
         const centerX = (chart.chartArea.left + chart.chartArea.right) / 2;
         const centerY = (chart.chartArea.top + chart.chartArea.bottom) / 2;
-        ctx.font = 'bold 20px Inter';
+        ctx.font = 'bold 0.95rem Inter';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillStyle = 'white';
     
         // Testi da visualizzare
-        ctx.fillText('Congratulations!', centerX, centerY - 80);
-        ctx.font = 'bold 20px Inter';
+        ctx.fillText('Congratulations!', centerX, centerY - 58);
+        ctx.font = 'bold 0.95rem Inter';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillStyle = '#00FFFF';
-        ctx.fillText('You passed the exam.', centerX, centerY -50);
-        ctx.font = '200 18px Inter';
+        ctx.fillText('You passed the exam.', centerX, centerY -30);
+        ctx.font = '200 0.80rem Inter';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillStyle = 'white';
-        ctx.fillText("We will send you the certificate", centerX, centerY +10);
+        ctx.fillText("We will send you the certificate", centerX, centerY +4);
         ctx.fillText("in few minutes.", centerX, centerY + 30);
-        ctx.fillText('Check your email!', centerX, centerY + 70);
+        ctx.fillText('Check your email!', centerX, centerY + 60);
     
         ctx.restore();
       }
@@ -50,26 +50,25 @@ function creazioneMessaggio() {
         // Proprietà del testo
         const centerX = (chart.chartArea.left + chart.chartArea.right) / 2;
         const centerY = (chart.chartArea.top + chart.chartArea.bottom) / 2;
-        ctx.font = 'bold 20px Inter';
+        ctx.font = 'bold 1.4rem Inter';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillStyle = 'white';
     
         // Testi da visualizzare
-        ctx.fillText('Failed!', centerX, centerY - 80);
-        ctx.font = 'bold 20px Inter';
+        ctx.fillText('Failed!', centerX, centerY - 60);
+        ctx.font = 'bold 0.85rem Inter';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillStyle = 'red';
-        ctx.fillText("You didn't pass the exam", centerX, centerY -50);
-        ctx.font = '200 18px Inter';
+        ctx.fillText("You didn't pass the exam", centerX, centerY -30);
+        ctx.font = '200 0.85rem Inter';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillStyle = 'white';
-        ctx.fillText("Umberto awaits you", centerX, centerY +10);
-        ctx.fillText("in his room.", centerX, centerY + 30);
-        ctx.fillText('Good Luck!', centerX, centerY + 70);
-    
+        ctx.fillText("Umberto is waiting for you", centerX, centerY +4);
+        ctx.fillText("in his chat-room.", centerX, centerY + 30);
+        ctx.fillText('Good Luck!', centerX, centerY + 65);
         ctx.restore();
       }
     };
