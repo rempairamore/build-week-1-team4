@@ -10,32 +10,39 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body id="body_results">
     <header>
-        <figure>
-            <img src="assets/img/epicode_logo.png" alt="epicode_logo">
-            <h1>EPICODE</h1>
+        <figure id="contLogo">
+            <img src="assets/img/epicode_logo.png" alt="epicode_logo" id="logo">
         </figure>
+   
+    </header>
+    <div id="risultato">
         <h2>Results</h2>
         <p>The summary of your answers:</p>
-    </header>
-    <div>
-        <p>Correct</p>
-        <p id="Correct%"></p>
-        <p id="Correct"></p>
     </div>
-    <div id="Grafo"></div>
-    <div>
-        <p>Wrong</p>
-        <p id="Wrong%"></p>
-        <p id="Wrong"></p>
+    <div id="cont_centrale">
+    <div id="corretto">
+        <p id="correct">Correct</p>
+        <p><span id="Correct%"></span> </p>
+        <p id="nCorrette"></p>
+    </div>
+    <div id="grafo">
+        <canvas id="donutChart" width="400" height="400"></canvas>
+    </div>
+    <div id="sbagliato">
+        <p id="wrong">Wrong</p>
+        <p ><span id="Wrong%"></span></p>
+        <p id="nSbagliate"></p>
     </div>
     <div>
-        <input type="button" value="RATE US">
+        <a href="feedback.html"><input type="button" value="RATE US" id="ResultBtn"> </a>
     </div>
     <footer>
-        <p> &copy; Team: </p>
+        <p> &copy; Team: Arcangelo, Maria, Mario, Giulio, Christian, Kleo</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="assets/script/script.js"></script>
+    <script src="assets/script/results.js"></script>
 </body>
 </html>
