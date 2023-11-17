@@ -5,6 +5,7 @@ let domandeNonRisposte = 0;
 let domandeTotali = 0;
 let counter = 0;
 let timeoutId = null;
+let divContainer = document.querySelector("#temporanee")
 let divDomanda = document.querySelector('#domanda')
 let divRisposte = document.querySelector('#risposte')
 //FINE
@@ -184,7 +185,7 @@ console.log('domande totali: ' + domandeTotali)
 function bottonePartenza () {
     let bottone = document.createElement('button')
     bottone.innerText = 'Clicca per Iniziare'
-    bottonePartenza.classList = 'bottoneInizio'
+    bottone.id = 'bottonePartenza'
     divDomanda.appendChild(bottone)
     bottone.addEventListener('click', () => {
         divDomanda.removeChild(bottone)
@@ -194,20 +195,20 @@ function bottonePartenza () {
 
 function prontiPartenza () {
     let titoloIniziale = document.createElement('h1')
-    titoloIniziale.classList = 'titoliDomande'
+    titoloIniziale.id = 'attendi'
     titoloIniziale.innerText = 'Attendi...'
     let titoloIniziale2 = document.createElement('h1')
     titoloIniziale2.classList = 'titoliDomande'
     titoloIniziale2.innerText = ' Le domande stanno per iniziare...'
-    divDomanda.appendChild(titoloIniziale)
+    divContainer.appendChild(titoloIniziale)
     setTimeout(() => {
-        divDomanda.removeChild(titoloIniziale);
+        divContainer.removeChild(titoloIniziale);
     }, 2000);
     setTimeout(function() { 
-        divDomanda.appendChild(titoloIniziale2)
+        divContainer.appendChild(titoloIniziale2)
     }, 2300);
     setTimeout(() => {
-        divDomanda.removeChild(titoloIniziale2);
+        divContainer.removeChild(titoloIniziale2);
         selettoreDomande()
     }, 4500);
 
