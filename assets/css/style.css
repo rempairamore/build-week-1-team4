@@ -49,7 +49,7 @@ footer{
   padding-left: 1em;
   position: absolute;
   margin: 0;
-  margin-top: 30vh;
+  margin-top: 15vh;
   font-size: small;
   text-align: left;
   }
@@ -101,7 +101,7 @@ footer{
   #bottone {
     display: inline-block;
     position: absolute;
-    margin-top: 6em;
+    margin-top: 7em;
     margin-left: 18em;
     border-color: #00ffff;
     border-style: hidden;
@@ -186,7 +186,7 @@ button:hover {
 #risposte {
   display: inline-block;
   position: relative;
-  margin-left: 25vw;
+  margin-left: 27vw;
   margin-top: 5vh;
   width: 60vw;
 }
