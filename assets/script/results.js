@@ -8,67 +8,84 @@ let nonRisposte = params.nonrisposte
 let CenterTextPlugin;
 console.log(domandeTotali, risposteGiuste, risposteSbagliate, nonRisposte)
 
+function calculateFontSize(chart) {
+  const chartSize = Math.min(chart.chartArea.bottom - chart.chartArea.top, chart.chartArea.right - chart.chartArea.left);
+  return Math.round(chartSize / 25) + 'px'; // Regola questo valore secondo necessità
+}
+
 function creazioneMessaggio() {
   if ((+risposteGiuste / +domandeTotali) * 100 >= 60) {
-     CenterTextPlugin = {
+    CenterTextPlugin = {
       afterDraw: (chart) => {
         let ctx = chart.ctx;
         ctx.save();
     
-        // Proprietà del testo
+        // Calcola la dimensione del font in modo dinamico
+        const fontSize = calculateFontSize(chart);
         const centerX = (chart.chartArea.left + chart.chartArea.right) / 2;
         const centerY = (chart.chartArea.top + chart.chartArea.bottom) / 2;
-        ctx.font = 'bold 0.95rem Inter';
+    
+        // Stili e testi per il caso di successo
+        let newFontSize = fontSize.slice(0, 2)
+        newFontSize = +newFontSize + 2
+        let newPixel = Math.round(newFontSize) + 'px';
+        console.log(newFontSize + 'ciao')
+        ctx.font = 'bold ' + newPixel  + ' Inter';
+        console.log('ecco il font size' + fontSize)
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillStyle = 'white';
-    
-        // Testi da visualizzare
         ctx.fillText('Congratulations!', centerX, centerY - 58);
-        ctx.font = 'bold 0.95rem Inter';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
+
+        newFontSize = +newFontSize + 1
+        newPixel = Math.round(newFontSize) + 'px'; 
+        ctx.font = 'bold ' + newPixel  + ' Inter';
         ctx.fillStyle = '#00FFFF';
-        ctx.fillText('You passed the exam.', centerX, centerY -30);
-        ctx.font = '200 0.80rem Inter';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
+        ctx.fillText('You passed the exam.', centerX, centerY - 30);
+
+        newFontSize = +newFontSize - 4
+        newPixel = Math.round(newFontSize) + 'px'; 
+        ctx.font = 'bold ' + newPixel  + ' Inter';
         ctx.fillStyle = 'white';
-        ctx.fillText("We will send you the certificate", centerX, centerY +4);
-        ctx.fillText("in few minutes.", centerX, centerY + 30);
+        ctx.fillText('We will send you the certificate', centerX, centerY + 4);
+        ctx.fillText('in few minutes.', centerX, centerY + 30);
         ctx.fillText('Check your email!', centerX, centerY + 60);
-    
+
         ctx.restore();
       }
-    };  
+    };
   } else {
-      CenterTextPlugin = {
+    CenterTextPlugin = {
       afterDraw: (chart) => {
         let ctx = chart.ctx;
         ctx.save();
     
-        // Proprietà del testo
+        // Calcola la dimensione del font in modo dinamico
+        const fontSize = calculateFontSize(chart);
         const centerX = (chart.chartArea.left + chart.chartArea.right) / 2;
         const centerY = (chart.chartArea.top + chart.chartArea.bottom) / 2;
-        ctx.font = 'bold 1.4rem Inter';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        ctx.fillStyle = 'white';
     
-        // Testi da visualizzare
-        ctx.fillText('Failed!', centerX, centerY - 60);
-        ctx.font = 'bold 0.85rem Inter';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        ctx.fillStyle = 'red';
-        ctx.fillText("You didn't pass the exam", centerX, centerY -30);
-        ctx.font = '200 0.85rem Inter';
+        // Stili e testi per il caso di fallimento
+        let newFontSize = fontSize.slice(0, 2)
+        newFontSize = +newFontSize + 2
+        let newPixel = Math.round(newFontSize) + 'px';
+        ctx.font = 'bold ' + newPixel + ' Inter';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillStyle = 'white';
-        ctx.fillText("Umberto is waiting for you", centerX, centerY +4);
-        ctx.fillText("in his chat-room.", centerX, centerY + 30);
-        ctx.fillText('Good Luck!', centerX, centerY + 65);
+        ctx.fillText('Failed!', centerX, centerY - 60);
+
+        ctx.fillStyle = 'red';
+        ctx.fillText("You didn't pass the exam", centerX, centerY - 30);
+
+        newFontSize = +newFontSize - 3
+        newPixel = Math.round(newFontSize) + 'px'; 
+        ctx.font = '300 ' + newPixel + ' Inter';
+        ctx.fillStyle = 'white';
+        ctx.fillText('Umberto is waiting for you', centerX, centerY + 4);
+        ctx.fillText('in his chat-room.', centerX, centerY + 30);
+        ctx.fillText('Good Luck!', centerX, centerY + 60);
+
         ctx.restore();
       }
     };
@@ -138,6 +155,5 @@ creazioneMessaggio()
     plugins: [ShadowPlugin, CenterTextPlugin]
   });
 
-//Creazione messaggio centrale Torta
 
 
