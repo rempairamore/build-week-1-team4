@@ -209,6 +209,7 @@ function prontiPartenza () {
     }, 2300);
     setTimeout(() => {
         divContainer.removeChild(titoloIniziale2);
+        divContainer.remove()
         selettoreDomande()
     }, 4500);
 
@@ -231,9 +232,7 @@ function selettoreDomande() {
       }, tempoDisposizione + 1000);
     } else {
         console.log('Quiz completato. Risposte corrette: ' + giuste + ', Risposte sbagliate: ' + sbagliate + ', Domande non Risposte: ' + domandeNonRisposte);
-        setTimeout(() => {
-          redirectToResults()
-        },1500)
+        redirectToResults()
     }
 }
 
@@ -275,26 +274,26 @@ divRisposte.addEventListener('click', function(event) {
         clearTimeout(timeoutId);
         let testoRisposta = event.target.innerText;
         if (testoRisposta === domande[counter].correctAnswers) {
-            console.log("Risposta corretta!");
+            // console.log("Risposta corretta!");
+            event.target.style.boxShadow = '10px 20px 20px green'
             giuste++;
             feedbackRispostaGiusta()
         } else {
-            console.log("Risposta sbagliata.");
+            // console.log("Risposta sbagliata.");
+            event.target.style.boxShadow = '10px 20px 20px red'
             sbagliate++;
             feedbackRispostaSbagliata()
         }
         setTimeout(() => {
           pulisciDomande()
-        },1500)
-        if (counter < domande.length - 1) {
+          if (counter < domande.length - 1) {
             counter++;
             selettoreDomande();
         } else {
             console.log('Quiz completato. Risposte corrette: ' + giuste + ', Risposte sbagliate: ' + sbagliate + ', Domande non Risposte: ' + domandeNonRisposte);
-            setTimeout(() => {
-              redirectToResults()
-            },1500)
+            redirectToResults()
         }
+        },1500)
     }
 });
 
