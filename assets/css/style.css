@@ -22,18 +22,17 @@ body {
   font-size: 16px;
   height: 100vh;
   overflow: hidden;
+  background-position: center;
 }
 header{
   height: 10vh;
 }
 #contLogo {
-  height: 10vh;
-  width: 20vw;
   padding-top: 4vh;
-  padding-left: 2vw;
+  padding-left: 3em;
 }
 #logo {
-  width: 13vw;
+  width: 10%;
 }
 h1,
 h2,
@@ -57,24 +56,31 @@ footer{
 #titolo{
   padding: 0;
   margin-top: 0.5em;
-  width: 30vw;
+  width: 60%;
+  line-height: 0.8;
 }
 #istruzioni {
   color: #d20094;
-  font-weight: 500;
-  font-size: xx-large;
-  padding-top: 2.5em;
+  font-weight: 600;
+  font-size: 1.6em;
+  padding-top: 1em;
   padding-bottom: 0.4em;
   margin-left: 0;
 }
+h3 + p {
+  width: 70%;
+}
+
 .testo {
   padding: 2em;
   padding-top: 0;
   padding-left: 0;
-  line-height: 1.3em;
+  line-height: 1.2em;
+  font-size: 0.85em;
+  font-weight: 300;
 }
 #content{
-  width: 45vw;
+  width: 100%;
   padding: 3em;
   height: 70vh;
   position: relative;
@@ -87,7 +93,9 @@ footer{
   }
   
   li {
-    padding: 0.5em;
+    padding: 0.3em;
+    font-size: 0.85em;
+    font-weight: 300;
   }
   
   form.welcomeForm {
@@ -95,9 +103,23 @@ footer{
     margin: 4em 0 0 0;
   }
 
-  #promessa label {
+  #promessa{
+    height: 1.2em;
+    width: 1.2em;
+    margin: 0;
+    opacity: 1;
+    outline: 1px solid white;
+  }
+
+  #promessa+label {
     display: inline-block;
-    width: 60%;
+    width: 50%;
+    font-weight: 600;
+    font-size: 0.75em;
+    vertical-align: middle;
+    height: 1.2em;
+    margin-bottom: 0.3em;
+    margin-left: 0.3em;
   }
   
   #bottone {
@@ -110,8 +132,9 @@ footer{
     background-color: #00ffff;
     height: 3em;
     width: 12em;
-    font-weight: bolder;
+    font-weight: bold;
     color: black;
+    padding: 1em 2em 1em 2em;
   }
   
   #bottone:hover {
