@@ -30,9 +30,10 @@ header{
 #contLogo {
   padding-top: 4vh;
   padding-left: 3em;
+  width: 10%;
 }
 #logo {
-  width: 10%;
+  width: 1%;
 }
 h1,
 h2,
@@ -45,12 +46,6 @@ span {
   font-weight: bold;
   color: white;
 }
-footer{
-  padding-left: 1em;
-  font-size: small;
-  text-align: left;
-  margin: 0em 0 2em 1em;
-  }
 
 /*WELCOME PAGE*/
 #titolo{
@@ -169,7 +164,7 @@ h3 + p {
 button {
   border-radius: 50em;
   height: 70px;
-  width: 350px;
+  width: 40%;
   background-color: rgba(246, 250, 250, 0.059);
   color: white;
   border: 2px solid;
@@ -184,23 +179,14 @@ button:hover {
 
 #temporanee{
   text-align: center;
-  position: absolute;
   height: 20vh;
-  padding-top: 30vh;
-  padding-left: 20vw;
+  margin: 13em auto 6em auto;
 }
 
 #attendi{
   padding-left: 22vw;
 }
- #foo{
-  padding-left: 1em;
-  position: absolute;
-  margin: 0;
-  margin-top: 60vh;
-  font-size: small;
-  text-align: left;
- }
+
 #domanda {
   text-align: center;
   width: 50vw;
@@ -209,31 +195,33 @@ button:hover {
 #risposte {
   display: inline-block;
   position: relative;
-  margin-left: 27vw;
-  margin-top: 5vh;
-  width: 60vw;
+  margin: 2em auto;
+  width: 100%;
+  text-align: center;
 }
 
 .risposta {
   margin: 1vw;
 }
+
 #bottonePartenza{
   position: static;
-  margin-top: 8em;
-  float: left;
-  margin-left: 12vw;
-  margin-bottom: 20vh;
+  margin: 4em auto;
   border-color: #00ffff;
   border-style: hidden;
   box-shadow: #00ffff5b 0px 0px 4px 4px;
   background-color: #00ffff;
-  width: 20vw;
+  width: 35%;
   font-weight: bolder;
   font-size: 1.1rem;
   color: black;
 }
 #bottonePartenza:hover {
   box-shadow: #d800dfaf 0px 0px 4px 4px;
+}
+
+#domanda h1 {
+  font-size: 2.5em;
 }
 /*CSS timer*/
 .base-timer {
@@ -290,7 +278,7 @@ button:hover {
   }
   
   #app {
-  margin-left: 83vw;
+  margin-left: 80vw;
   }
   
 /*RESULT*/
@@ -366,13 +354,14 @@ box-shadow: #d800dfaf 0px 0px 4px 4px;
 background-color: #900080;
 }
 
-.resultFooter {
-  margin-top: 2em;
-}
+/* .titoliDomande {
+  margin: 0 auto;
+  width: 100%;
+  margin-right: 5em;
+} */
 
 /* MEDIA QUERY */
 
-/* media query per la pagina results.html */
 @media only screen and (max-width: 530px) {
   #corretto, #sbagliato {
     font-size: 0.6em;
@@ -423,9 +412,7 @@ background-color: #900080;
   #titolo {
     margin-top: 0;
   }
-  footer {
-    margin: 5em 0 2em 1em;
-  }
+
 }
 
 @media only screen and (min-width: 531px) and (max-width: 700px) {
@@ -446,7 +433,7 @@ background-color: #900080;
     /* width: 20%; */
   }
   #logo {
-    width: 25vw;
+    width: 34vw;
     margin-left: 0.6em;
   }
   #cont_centrale {
@@ -482,9 +469,7 @@ background-color: #900080;
     margin-top: 0;
     width: 70%;
   }
-  footer {
-    margin: 5em 0 2em 1em;
-  }
+
 }
 
 @media only screen and (min-width: 701px) and (max-width: 1150px) {
@@ -505,7 +490,7 @@ background-color: #900080;
     /* width: 20%; */
   }
   #logo {
-    width: 25vw;
+    width: 20vw;
     margin-left: 0.6em;
   }
   #cont_centrale {
@@ -538,7 +523,7 @@ background-color: #900080;
     /* width: 20%; */
   }
   #logo {
-    width: 20vw;
+    width: 25vw;
     margin-left: 0.6em;
   }
   #cont_centrale {

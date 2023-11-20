@@ -186,16 +186,16 @@ function bottonePartenza () {
     let bottone = document.createElement('button')
     bottone.innerText = 'Clicca per Iniziare'
     bottone.id = 'bottonePartenza'
-    divDomanda.appendChild(bottone)
+    divContainer.appendChild(bottone)
     bottone.addEventListener('click', () => {
-        divDomanda.removeChild(bottone)
+        divContainer.removeChild(bottone)
         prontiPartenza()
     })
 }
 
 function prontiPartenza () {
     let titoloIniziale = document.createElement('h1')
-    titoloIniziale.id = 'attendi'
+    titoloIniziale.classList = 'titoliDomande'
     titoloIniziale.innerText = 'Attendi...'
     let titoloIniziale2 = document.createElement('h1')
     titoloIniziale2.classList = 'titoliDomande'
@@ -220,7 +220,7 @@ function selettoreDomande() {
     clearTimeout(timeoutId);
     console.log('Counter all\'inizio di selettoreDomande: ' + counter);
     if (counter < domande.length) {
-        let tempoDisposizione = domande[counter].type == 'crocetta' ? 30000 : 15000;
+        let tempoDisposizione = domande[counter].type == 'crocetta' ? 3000000 : 1500000;
         startTimer(tempoDisposizione / 1000)
         chiamaDomanda(counter, tempoDisposizione);
 
