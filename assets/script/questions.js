@@ -134,7 +134,91 @@ function setCircleDasharray() {
 
 
 //Array domande
-let domande = [
+let domande = [];
+let domandeDifficili = [
+  {
+      id: 1,
+      type: 'booleano',
+      title: 'Il linguaggio Python è stato creato da Guido van Rossum?',
+      correctAnswers: 'SI',
+      other1: 'NO'
+  },
+  {
+      id: 2,
+      type: 'booleano',
+      title: 'Il primo programma di computer è stato scritto da Ada Lovelace?',
+      correctAnswers: 'SI',
+      other1: 'NO'
+  },
+  {
+      id: 3,
+      type: 'booleano',
+      title: 'HTML è principalmente usato per la programmazione di sistemi operativi?',
+      correctAnswers: 'NO',
+      other1: 'SI'
+  },
+  {
+      id: 4,
+      type: 'booleano',
+      title: 'Un terabyte è più grande di un gigabyte?',
+      correctAnswers: 'SI',
+      other1: 'NO'
+  },
+  {
+      id: 5,
+      type: 'booleano',
+      title: 'Linux è un sistema operativo basato su Unix?',
+      correctAnswers: 'SI',
+      other1: 'NO'
+  },
+  {
+      id: 6,
+      type: 'crocetta',
+      title: 'Quale di questi non è un linguaggio di programmazione?',
+      correctAnswers: 'HTML',
+      other1: 'Java',
+      other2: 'Python',
+      other3: 'C++'
+  },
+  {
+      id: 7,
+      type: 'crocetta',
+      title: 'Quale azienda ha sviluppato il sistema operativo Windows?',
+      correctAnswers: 'Microsoft',
+      other1: 'Apple',
+      other2: 'IBM',
+      other3: 'Google'
+  },
+  {
+      id: 8,
+      type: 'crocetta',
+      title: 'In quale anno è stato lanciato il World Wide Web?',
+      correctAnswers: '1989',
+      other1: '1975',
+      other2: '1991',
+      other3: '1980'
+  },
+  {
+      id: 9,
+      type: 'crocetta',
+      title: 'Quale linguaggio di programmazione è conosciuto per il suo utilizzo in sviluppo web frontend?',
+      correctAnswers: 'JavaScript',
+      other1: 'C#',
+      other2: 'Python',
+      other3: 'Ruby'
+  },
+  {
+      id: 10,
+      type: 'crocetta',
+      title: 'Chi è considerato il padre della computer science moderna?',
+      correctAnswers: 'Alan Turing',
+      other1: 'Bill Gates',
+      other2: 'Steve Jobs',
+      other3: 'Tim Berners-Lee'
+  }
+];
+
+let domandeFacili = [
     {
         id: 1,
         type: 'crocetta',
@@ -177,7 +261,6 @@ let domande = [
         other3: 'Libri comprati a caro prezzo',
     }
 ]
-domandeTotali = domande.length;
 console.log('domande totali: ' + domandeTotali)
 
 
@@ -190,9 +273,39 @@ function bottonePartenza () {
     divContainer.appendChild(bottone)
     bottone.addEventListener('click', () => {
         divContainer.removeChild(bottone)
-        prontiPartenza()
+        scegliDiff()
     })
 }
+
+function scegliDiff() {
+  let bottoneFacile = document.createElement('button');
+  bottoneFacile.innerText = 'Facile';
+  bottoneFacile.id = 'bottoneFacile';
+  divContainer.appendChild(bottoneFacile);
+
+  let bottoneDifficile = document.createElement('button');
+  bottoneDifficile.innerText = 'Difficile';
+  bottoneDifficile.id = 'bottoneDifficile';
+  divContainer.appendChild(bottoneDifficile);
+
+  bottoneFacile.addEventListener('click', () => {
+      domande = domandeFacili; 
+      divContainer.removeChild(bottoneFacile);
+      divContainer.removeChild(bottoneDifficile);
+      domandeTotali = domande.length;
+      prontiPartenza()
+  });
+
+  bottoneDifficile.addEventListener('click', () => {
+      domande = domandeDifficili;
+      divContainer.removeChild(bottoneFacile);
+      divContainer.removeChild(bottoneDifficile);
+      domandeTotali = domande.length;
+      prontiPartenza()
+  });
+  
+}
+
 
 function prontiPartenza () {
     let titoloIniziale = document.createElement('h1')
@@ -315,7 +428,7 @@ function generaArrayCasuale4num() {
 }
 
 function redirectToResults() {
-  const baseUrl = "results.html"; // Nome del file nella stessa cartella
+  const baseUrl = "results.html"; 
   const queryString = `?giuste=${encodeURIComponent(giuste)}&sbagliate=${encodeURIComponent(sbagliate)}&nonrisposte=${encodeURIComponent(domandeNonRisposte)}&domandetotali=${encodeURIComponent(domandeTotali)}`;
 
   // Esegui il redirect
