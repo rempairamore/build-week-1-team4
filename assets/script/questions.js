@@ -220,7 +220,7 @@ function selettoreDomande() {
     clearTimeout(timeoutId);
     console.log('Counter all\'inizio di selettoreDomande: ' + counter);
     if (counter < domande.length) {
-        let tempoDisposizione = domande[counter].type == 'crocetta' ? 3000000 : 1500000;
+        let tempoDisposizione = domande[counter].type == 'crocetta' ? 30000 : 15000;
         startTimer(tempoDisposizione / 1000)
         chiamaDomanda(counter, tempoDisposizione);
 
