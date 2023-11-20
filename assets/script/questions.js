@@ -8,6 +8,7 @@ let timeoutId = null;
 let divContainer = document.querySelector("#temporanee")
 let divDomanda = document.querySelector('#domanda')
 let divRisposte = document.querySelector('#risposte')
+let divConteggio = document.getElementById("conteggio")
 //FINE
 
 
@@ -55,9 +56,9 @@ document.getElementById("app").innerHTML = `
       ></path>
     </g>
   </svg>
-  <span id="base-timer-label" class="base-timer__label">${formatTime(
-    0
-  )}</span>
+  <span id="base-timer-label" class="base-timer__label"> <span id = "secondsInizio"> ${formatTime(
+    0 
+  )}</span></span>
 </div>
 `;
 
@@ -79,7 +80,7 @@ function startTimer(tempo) {
   timerInterval = setInterval(() => {
     timePassed++;
     timeLeft = duration - timePassed;
-    document.getElementById("base-timer-label").innerHTML = formatTime(timeLeft);
+    document.getElementById("base-timer-label").innerHTML = "Seconds" + '<span id = "seconds">' + formatTime(timeLeft) + '</span>' + "remaining";
     setCircleDasharray();
     setRemainingPathColor(timeLeft);
 
@@ -218,6 +219,7 @@ function prontiPartenza () {
 
 function selettoreDomande() {
     clearTimeout(timeoutId);
+    divConteggio.innerHTML ='QUESTION ' + (1 + +counter) + '<span id = "questViola">' + ' / ' + domande.length + '</span>';
     console.log('Counter all\'inizio di selettoreDomande: ' + counter);
     if (counter < domande.length) {
         let tempoDisposizione = domande[counter].type == 'crocetta' ? 30000 : 15000;
