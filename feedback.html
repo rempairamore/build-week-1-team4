@@ -10,6 +10,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
     />
     <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/feedback-style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -52,23 +53,17 @@
             Leave us an open feedback about your experience so far
           </p>
         </div>
-
-        <form id="feedbackForm">
-          <input
-            type="text"
-            id="feedbackInput"
-            placeholder="Write your comment here"
-          />
-          <a href="https://epicode.com/it/"
-            ><input type="button" id="feedbackBtn" value="MORE INFO"
-          /></a>
-        </form>
+        <div>
+           <form id="feedbackForm">
+            <input type="text" id="feedbackInput"  placeholder="Write your comment here"/>
+            <input type="button" id="bottone_invio" value="Invia">
+           </form>
+        </div>
+       
+        <a href="https://epicode.com/it/"><input type="button" id="feedbackBtn" value="MORE INFO"/></a>
       </div>
+      <div id="comment-container"></div>
     </div>
-    <footer>
-      <p>&copy; Team: Arcangelo, Maria, Mario, Giulio, Christian, Kleo</p>
-    </footer>
-
     <script src="assets/script/feedback.js"></script>
   </body>
 </html>
