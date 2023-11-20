@@ -20,7 +20,7 @@ body {
 
 header {
   width: 30em;
-  padding-left: 3em;
+  /* padding-left: 3em; */
 }
 
 figure {
@@ -30,7 +30,7 @@ figure {
 }
 
 img {
-  height: 3em;
+  /* height: 3em; */
   width: 12em;
 }
 
