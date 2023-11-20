@@ -1,0 +1,28 @@
+#base-timer-label{
+    display: block;
+    text-align: center;
+    font-size: small;
+    font-weight: 300;
+    padding-top: 2.5em;
+}
+#seconds{
+    display: block;
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+#secondsInizio{
+    display: block;
+    padding-top: 0.25em;
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+#conteggio{
+    display: block;
+    text-align: center;
+    padding-top: 6em;
+}
+
+#questViola{
+    color: #D20094;
+}
