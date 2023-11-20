@@ -186,16 +186,16 @@ function bottonePartenza () {
     let bottone = document.createElement('button')
     bottone.innerText = 'Clicca per Iniziare'
     bottone.id = 'bottonePartenza'
-    divDomanda.appendChild(bottone)
+    divContainer.appendChild(bottone)
     bottone.addEventListener('click', () => {
-        divDomanda.removeChild(bottone)
+        divContainer.removeChild(bottone)
         prontiPartenza()
     })
 }
 
 function prontiPartenza () {
     let titoloIniziale = document.createElement('h1')
-    titoloIniziale.id = 'attendi'
+    titoloIniziale.classList = 'titoliDomande'
     titoloIniziale.innerText = 'Attendi...'
     let titoloIniziale2 = document.createElement('h1')
     titoloIniziale2.classList = 'titoliDomande'
