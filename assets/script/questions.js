@@ -80,7 +80,7 @@ function startTimer(tempo) {
   timerInterval = setInterval(() => {
     timePassed++;
     timeLeft = duration - timePassed;
-    document.getElementById("base-timer-label").innerHTML = "Seconds" + '<span id = "seconds">' + formatTime(timeLeft) + '</span>' + "remaining";
+    document.getElementById("base-timer-label").innerHTML = "SECONDS" + '<span id = "seconds">' + formatTime(timeLeft) + '</span>' + "REMAINING";
     setCircleDasharray();
     setRemainingPathColor(timeLeft);
 
